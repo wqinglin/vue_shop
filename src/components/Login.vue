@@ -20,6 +20,7 @@
             v-model="form.password"
             prefix-icon="iconfont icon-mima"
             type="password"
+            show-password
           ></el-input>
         </el-form-item>
         <!-- 登录&重置 -->
