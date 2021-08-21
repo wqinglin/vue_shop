@@ -111,8 +111,7 @@
         <el-button type="primary" @click="addCate">确 定</el-button>
       </span>
     </el-dialog>
-    <!-- 编辑用户对话框 -->
-    <!-- 编辑对话框 -->
+     <!-- 编辑对话框 -->
     <el-dialog
       title="修改分类"
       :visible.sync="editCateDialogVisible"
