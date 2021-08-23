@@ -4,7 +4,7 @@
     <el-breadcrumb separator="/">
       <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item>商品管理</el-breadcrumb-item>
-      <el-breadcrumb-item>商品列表</el-breadcrumb-item>
+      <el-breadcrumb-item>参数列表</el-breadcrumb-item>
     </el-breadcrumb>
 
     <!-- 卡片视图区域  -->
@@ -111,7 +111,7 @@
           <!-- only数据表格区域 -->
           <el-table :data="onlyTableData" style="width: 100%" border stripe>
             <!-- 展开行 -->
-            <el-table-column type="expand">
+          <el-table-column type="expand">
               <template v-slot:default="scope">
                 <!-- 标签 -->
                 <el-tag
@@ -480,13 +480,14 @@ export default {
     //将数据保存到数据库
    async saveAttrVals(row){
         const { data: res } = await this.$ajax.put(
-        `categories/${this.cateId}/attributes/${row.attr_vals}`,
+        `categories/${this.cateId}/attributes/${row.attr_id}`,
         {
           attr_name: row.attr_name,
           attr_sel: row.attr_sel,
           attr_vals: row.attr_vals.join(" "),
         }
       );
+      console.log(res);
       if (res.meta.status !== 200) {
         return this.$message.error("删除参数项失败");
       }
