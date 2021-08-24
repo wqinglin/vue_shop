@@ -39,7 +39,6 @@
           </template>
         </el-table-column>
         <el-table-column label="操作" width="180px">
-          <template v-slot:default="scope">
             <el-button
               type="primary"
               icon="el-icon-edit"
@@ -52,7 +51,6 @@
               size="mini"
               @click="showProgress"
             ></el-button>
-          </template>
         </el-table-column>
       </el-table>
       <!-- 分页区 -->
